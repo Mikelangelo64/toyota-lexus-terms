@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'NobelWGL';
+    src: url('../assets/fonts/NobelWGL-Book.eot');
+    src: url('../assets/fonts/NobelWGL-Book.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/NobelWGL-Book.woff2') format('woff2'),
+        url('../assets/fonts/NobelWGL-Book.woff') format('woff'),
+        url('../assets/fonts/NobelWGL-Book.ttf') format('truetype'),
+        url('../assets/fonts/NobelWGL-Book.svg#NobelWGL-Book') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NobelWGL';
+    src: url('../assets/fonts/NobelWGL-Bold.eot');
+    src: url('../assets/fonts/NobelWGL-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/NobelWGL-Bold.woff2') format('woff2'),
+        url('../assets/fonts/NobelWGL-Bold.woff') format('woff'),
+        url('../assets/fonts/NobelWGL-Bold.ttf') format('truetype'),
+        url('../assets/fonts/NobelWGL-Bold.svg#NobelWGL-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Toyota Text';
+    src: url('../assets/fonts/ToyotaText-Bold.eot');
+    src: url('../assets/fonts/ToyotaText-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/ToyotaText-Bold.woff2') format('woff2'),
+        url('../assets/fonts/ToyotaText-Bold.woff') format('woff'),
+        url('../assets/fonts/ToyotaText-Bold.ttf') format('truetype'),
+        url('../assets/fonts/ToyotaText-Bold.svg#ToyotaText-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Toyota Text';
+    src: url('../assets/fonts/ToyotaText-Regular.eot');
+    src: url('../assets/fonts/ToyotaText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/ToyotaText-Regular.woff2') format('woff2'),
+        url('../assets/fonts/ToyotaText-Regular.woff') format('woff'),
+        url('../assets/fonts/ToyotaText-Regular.ttf') format('truetype'),
+        url('../assets/fonts/ToyotaText-Regular.svg#ToyotaText-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
