@@ -64,6 +64,11 @@ body{
     background-color: var(--color-bg-primary);
 }
 
+@mixin section-inner-dark {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-third);
+}
+
 @mixin section-light {
     color: var(--color-text-secondary);
     background-color: var(--color-bg-secondary);
@@ -276,17 +281,12 @@ body{
     width: 100%;
     padding: 0 var(--wrap-1);
     margin: 0;
-    // margin: 0 auto;
+}
 
-    // @include viewport-desktop {
-    //     max-width: px-to-rem(1345);
-    // }
-    // @include viewport-tablet {
-    //     max-width: 93.142%;
-    // }
-    // @include viewport-phone {
-    //     max-width: 93.142%;
-    // }
+._wrap-inner {
+    width: 100%;
+    padding: 0 var(--wrap-2);
+    margin: 0;
 }
 
 // .custom-logo-link {

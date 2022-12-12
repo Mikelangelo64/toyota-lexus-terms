@@ -341,19 +341,54 @@
 
 //INFO-------------------------------------------------------------------------
 .info {
-    @include viewport-tablet-max {
-        padding-top: px-to-rem(58);
+    @include section-dark;
+
+    &._main {
+        @include viewport-desktop {
+            padding-top: 0;
+        }
+
+        @include viewport-tablet-max {
+            padding-top: px-to-rem(58);
+        }
     }
 
-    > * + * {
+    &._light {
+        @include section-light;
+
         @include viewport-tablet-min {
-            margin-top: px-to-rem(48.5);
+            padding: px-to-rem(86) 0 px-to-rem(144);
         }
 
         @include viewport-phone {
-            border-top: 1px solid var(--color-bg-secondary);
-            margin-top: px-to-rem(28.5);
-            padding-top: px-to-rem(24.5);
+            padding: px-to-rem(47.56) 0 px-to-rem(56);
+        }
+    }
+
+    &._inner-dark {
+        @include section-inner-dark;
+
+        @include viewport-tablet-min {
+            padding: px-to-rem(80) 0;
+        }
+
+        @include viewport-phone {
+            padding: px-to-rem(43.56) 0;
+        }
+    }
+
+    //.info__content 
+    &__content {
+        > * + * {
+            @include viewport-tablet-min {
+                margin-top: px-to-rem(48.5);
+            }
+    
+            @include viewport-phone {
+                border-top: 1px solid var(--color-bg-secondary);
+                margin-top: px-to-rem(28.5);
+                padding-top: px-to-rem(24.5);
+            }
         }
     }
 
@@ -514,14 +549,60 @@
     }
 }
 
+//BANNER-INNER--------------------------------------------------------------
+.banner-inner {
+    @include viewport-tablet-min {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    //.banner-inner__img__container 
+    &__img__container {
+        @include viewport-tablet-min {
+            padding-top: 43.888%;
+        }
+
+        img {
+            @include viewport-tablet-min {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @include viewport-phone {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+.inner-content {
+    @include viewport-tablet-min {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 //FOOTER---------------------------------------------------------------------
 .footer {
+    @include section-dark;
+
     @include viewport-tablet-min {
         padding: px-to-rem(66.46) 0 px-to-rem(49.69);
     }
 
     @include viewport-phone {
         padding: px-to-rem(52.44) 0 px-to-rem(16);
+    }
+
+    &._inner {
+       @include section-inner-dark;
     }
 
     //.footer__copyrights 
