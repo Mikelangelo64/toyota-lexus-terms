@@ -373,7 +373,18 @@
         }
 
         @include viewport-phone {
+            overflow: hidden;
             padding: px-to-rem(43.56) 0;
+        }
+    }
+
+    &._other {
+        @include viewport-tablet-min {
+            padding-top: px-to-rem(40);
+        }
+
+        @include viewport-phone {
+            padding-top: px-to-rem(32);
         }
     }
 
@@ -392,15 +403,23 @@
         }
     }
 
-    &._other {
+    //.info__title__container 
+    &__title__container {
         @include viewport-tablet-min {
-            padding-top: px-to-rem(40);
+            margin-bottom: px-to-rem(32.66);
         }
 
         @include viewport-phone {
-            padding-top: px-to-rem(32);
+            margin-bottom: px-to-rem(21.82);
         }
     }
+
+    //.info__title
+    &__title {
+        @include text-heading-inner-2;
+        text-align: center;
+    }
+
 
     //.info__descriprion 
     &__descriprion {
@@ -413,6 +432,16 @@
 
             @include viewport-phone {
                 margin-top: px-to-rem(15);
+            }
+        }
+
+        @at-root .info._inner-dark .info__descriprion > * + * {
+            @include viewport-tablet-min {
+                margin-top: px-to-rem(31.55);
+            }
+
+            @include viewport-phone {
+                margin-top: px-to-rem(27.55);
             }
         }
     }
@@ -455,6 +484,159 @@
         
         //.info-link__link 
         &__link {
+        }
+    }
+
+    //.info-list 
+    &-list {
+        
+        li { 
+            position: relative;
+            z-index: 0;
+
+            &:first-child {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--color-text-secondary);
+                }
+            }
+            
+        }
+
+        //.info-list__item 
+        &__item {
+            position: relative;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            color: inherit;
+
+            @include viewport-tablet-min {
+                padding: px-to-rem(22.74) px-to-rem(13.55);
+            }
+
+            @include viewport-phone {
+                padding: px-to-rem(17.55) 0 px-to-rem(10);
+            }
+
+            > * + * {
+                @include viewport-desktop {
+                    margin-left: px-to-rem(80);
+                }
+
+                @include viewport-tablet {
+                    margin-left: px-to-rem(56);
+                }
+
+                @include viewport-phone {
+                    margin-left: px-to-rem(33);
+                }
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+            }
+
+            &::before {
+                bottom: 0;
+                height: 1px;
+                background-color: var(--color-text-secondary);
+            }
+
+            &::after {
+                top: 0;
+                height: 100%;
+                background-color: var(--color-element-thirdy);
+                transform: scaleX(0) scaleY(102%);
+                transition: transform 0.6s ease-in;
+                transform-origin: 0 50%;
+
+                @include viewport-phone {
+                    width: calc(100% + 2 * var(--wrap-1));
+                    margin-left: calc(-1 * var(--wrap-1));
+                }
+
+                // @at-root .info-list li:nth-child(odd) .info-list__item::after {
+                //     transform-origin: 0 50%;
+                // }
+
+                // @at-root .info-list li:nth-child(even) .info-list__item::after {
+                //     transform-origin: 100% 50%;
+                // }
+
+                @at-root .info-list__item:hover::after {
+                    transform: scaleX(1) scaleY(103%);
+                }
+
+                @at-root .info-list__item:focus-visible::after {
+                    transform: scaleX(1) scaleY(103%);
+                }
+            }
+        }
+        
+        //.info-list__year 
+        &__year {
+            position: relative;
+            z-index: 1;
+            line-height: px-to-rem(38);
+            color: var(--color-bg-third);
+
+            @include viewport-tablet-min {
+                font-size: px-to-rem(36);
+            }
+
+            @include viewport-phone {
+                font-size: px-to-rem(28);
+            }
+        }
+        
+        //.info-list__title 
+        &__title {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+
+            @include viewport-tablet-min {
+                position: relative;
+                font-size: px-to-rem(21);
+            }
+
+            @include viewport-phone {
+                font-size: px-to-rem(18);
+            }
+
+            &::before {
+                @include viewport-tablet-min {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--color-element-secondary);
+
+                    transform: scaleX(0);
+                    transition: transform 0.15s ease;
+                    transform-origin: 50% 50%;
+
+                    @at-root .info-list__item:hover .info-list__title::before {
+                        transform: scaleX(1);
+                    }
+
+                    @at-root .info-list__item:focus-visible .info-list__title::before {
+                        transform: scaleX(1);
+                    }
+                }
+            }
         }
     }
 }
@@ -583,6 +765,8 @@
 }
 
 .inner-content {
+    font-family: $font-family-inner;
+
     @include viewport-tablet-min {
         position: relative;
         z-index: 1;
@@ -617,6 +801,12 @@
 
         @include viewport-phone {
             font-size: px-to-rem(14);
+        }
+
+        @at-root .footer._inner & {
+            @include viewport-tablet-min {
+                opacity: 0.5;
+            }
         }
     }
 }
