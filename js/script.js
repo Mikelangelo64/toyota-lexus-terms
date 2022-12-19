@@ -85,6 +85,18 @@ $(document).ready(function () {
       progress *= -1;
     }
 
+    if (document.body.clientWidth <= 1440) {
+      if (isReverse) {
+        additionalElements[0].style.transform = `translateX(${
+          -progress * 100 - 100
+        }%)`;
+      } else {
+        additionalElements[1].style.transform = `translateX(${
+          100 - progress * 100
+        }%)`;
+      }
+    }
+
     element.style.backgroundPosition = `${progress * 10}px 0`;
   }
 
@@ -96,29 +108,32 @@ $(document).ready(function () {
 
   let isHasScroll = true;
 
-  // window.addEventListener('scroll', listenerHandler)
-  // window.addEventListener('resize', () => {
-  //     if (document.body.clientWidth <= 1210) {
-  //         window.removeEventListener('scroll', listenerHandler)
-  //         banners.forEach((banner, index) => {
-  //             banner.style.backgroundPosition = ''
-  //         })
-  //         isHasScroll = false
-  //     }
+  window.addEventListener('scroll', listenerHandler);
+  window.addEventListener('resize', () => {
+    if (document.body.clientWidth <= 1210) {
+      window.removeEventListener('scroll', listenerHandler);
+      banners.forEach((banner, index) => {
+        banner.style.backgroundPosition = '';
+      });
+      shadows.forEach((shadow, index) => {
+        shadow.style.transform = '';
+      });
+      isHasScroll = false;
+    }
 
-  //     if (document.body.clientWidth > 1210 && !isHasScroll) {
-  //         window.addEventListener('scroll', listenerHandler)
-  //         isHasScroll = true
-  //     }
+    if (document.body.clientWidth > 1210 && !isHasScroll) {
+      window.addEventListener('scroll', listenerHandler);
+      isHasScroll = true;
+    }
 
-  //     shadows.forEach((shadow) => {
-  //         if (document.body.clientWidth > 1440) {
-  //             shadow.style.transform = 'ranslateX(35%)'
-  //         } else {
-  //             shadow.style.transform = ''
-  //         }
-  //     })
-  // })
+    shadows.forEach((shadow) => {
+      if (document.body.clientWidth > 1440) {
+        // shadow.style.transform = 'ranslateX(35%)';
+      } else {
+        shadow.style.transform = '';
+      }
+    });
+  });
 
   //swipers
   let swiperDonats = null;
