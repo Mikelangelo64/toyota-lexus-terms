@@ -595,6 +595,27 @@
     &__columns {
         @include text-body-1;
     }
+
+    //.info__button__container 
+    &__button__container {
+        display: flex;
+        justify-content: center;
+        border-top: unset;
+        padding-top: unset;
+
+        @include viewport-tablet-min {
+            margin-top: px-to-rem(60);
+        }
+
+        @include viewport-phone {
+            margin-top: px-to-rem(44);
+        }
+    }
+
+    //.info__button 
+    &__button {
+        @include button-red;
+    }
     
     //.info-link 
     &-link {

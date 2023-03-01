@@ -15,6 +15,8 @@
   --color-element-secondary: #000000;
   --color-element-thirdy--rgb: 242, 242, 240;
   --color-element-thirdy: #f2f2f0;
+  --color-element-fourthy--rgb: 215, 25, 33;
+  --color-element-fourthy: #d71921;
 }
 
 html {
@@ -963,6 +965,74 @@ body._lock {
     font-size: 1rem;
     line-height: 137.5%;
   }
+}
+.info__button__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: unset;
+  padding-top: unset;
+}
+@media (min-width: 900px) {
+  .info__button__container {
+    margin-top: 3.75rem;
+  }
+}
+@media (max-width: 899px) {
+  .info__button__container {
+    margin-top: 2.75rem;
+  }
+}
+.info__button {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.6875rem 2rem;
+  border-radius: 6.25rem;
+  background-color: var(--color-element-fourthy);
+  font-family: "Toyota", sans-serif;
+  font-weight: 400;
+  line-height: 128%;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+.info__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6.25rem;
+  background-color: var(--color-bg-primary);
+  opacity: 0.3;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+._button:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+._button:focus-visible::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.info__button .button__inner {
+  position: relative;
+  z-index: 0;
 }
 @media (min-width: 900px) {
   .info-link > * + * {
