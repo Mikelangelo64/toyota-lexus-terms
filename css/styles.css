@@ -1363,6 +1363,11 @@ body._lock {
 .inner-content {
   font-family: "Toyota", sans-serif;
 }
+.inner-content._terms {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--color-bg-secondary);
+}
 @media (min-width: 900px) {
   .inner-content {
     position: relative;
